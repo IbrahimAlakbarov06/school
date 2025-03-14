@@ -59,11 +59,11 @@ public class GroupRepo implements GroupDao{
         try (Connection connection = ConnectionHelper.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
-            preparedStatement.setString(1, group2.getName()); // Yeni ad
-            preparedStatement.setString(2, group2.getDescription()); // Yeni təsvir
-            preparedStatement.setInt(3, id); // Köhnə qrupun ID-si
+            preparedStatement.setString(1, group2.getName());
+            preparedStatement.setString(2, group2.getDescription());
+            preparedStatement.setInt(3, id);
 
-            int rowsAffected = preparedStatement.executeUpdate(); // Sorgunu icra et
+            int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected == 0) {
                 throw new EntityNotFoundException("Group not found with ID: " + id);
             }
@@ -73,8 +73,6 @@ public class GroupRepo implements GroupDao{
             throw new DatabaseException("Error updating group: " + e.getMessage());
         }
     }
-
-
 
     @Override
     public void deleteGroup(int id) {

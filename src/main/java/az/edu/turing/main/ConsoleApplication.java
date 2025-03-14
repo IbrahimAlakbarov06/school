@@ -1,6 +1,6 @@
-package az.edu.turing.console;
+package az.edu.turing.main;
 
-public class ConsoleApp {
+public class ConsoleApplication {
 
     public void save(){
 
